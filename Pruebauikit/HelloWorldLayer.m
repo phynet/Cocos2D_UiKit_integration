@@ -13,6 +13,9 @@
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 
+
+
+
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -37,14 +40,17 @@
 		
 		// create and initialize a Label
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
+        CCSprite *sprite = [CCSprite spriteWithFile:@"Icon-72.png"];
+   
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 	
 		// position the label on the center of the screen
 		label.position =  ccp( size.width /2 , size.height/2 );
-		
+        sprite.position = ccp(160,180);
+		   
 		// add the label as a child to this Layer
+        [self addChild:sprite];
 		[self addChild: label];
 	}
 	return self;
